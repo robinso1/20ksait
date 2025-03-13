@@ -698,15 +698,20 @@ body {
     color: white;
     font-size: 36px;
     margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 18px;
     max-width: 700px;
     margin: 0 auto 30px;
     line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
 }
 
 .cta .button {
@@ -1160,31 +1165,7 @@ section:nth-child(even) {
 }
 
 .testimonial-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid var(--primary-light);
-    box-shadow: 0 5px 15px rgba(0, 85, 164, 0.2);
-    background-color: var(--primary-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
-
-.testimonial-card:nth-child(1) .testimonial-avatar::before {
-    content: "АК";
-}
-
-.testimonial-card:nth-child(2) .testimonial-avatar::before {
-    content: "МД";
-}
-
-.testimonial-card:nth-child(3) .testimonial-avatar::before {
-    content: "СВ";
+    display: none; /* Скрываем аватарки */
 }
 
 .testimonial-author {
@@ -1206,7 +1187,7 @@ section:nth-child(even) {
 .testimonial-rating {
     display: flex;
     margin-bottom: 15px;
-    color: var(--accent);
+    color: #00b894;
 }
 
 .testimonial-text {
