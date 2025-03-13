@@ -32,7 +32,7 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.7;
     color: var(--gray-800);
-    background-color: var(--gray-100);
+    background-color: var(--white);
     font-size: 16px;
 }
 
@@ -170,9 +170,11 @@ body {
     opacity: 1;
 }
 
+/* Улучшенные стили для телефона в хедере */
 .nav-phone {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--primary);
     font-weight: 600;
     text-decoration: none;
@@ -180,12 +182,18 @@ body {
     padding: 8px 15px;
     border: 2px solid var(--primary);
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 16px;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 85, 164, 0.1);
 }
 
 .nav-phone i {
     margin-right: 8px;
     font-size: 16px;
+}
+
+.phone-number {
+    transition: all 0.3s ease;
 }
 
 .nav-phone:hover {
@@ -217,6 +225,7 @@ body {
         padding: 40px 0;
         transition: all 0.4s ease;
         box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
     }
     
     .nav-links.active {
@@ -232,7 +241,59 @@ body {
     }
     
     .nav-phone {
-        margin-top: 20px;
+        margin-left: auto;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .phone-number {
+        font-size: 14px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .logo-placeholder {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-phone {
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    
+    .nav-phone i {
+        margin-right: 0;
+        font-size: 18px;
+    }
+    
+    .phone-number {
+        display: none;
+    }
+    
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .logo-placeholder {
+        height: 35px;
+        width: 35px;
+        min-width: 35px;
+    }
+    
+    .navbar {
+        padding: 10px 0;
     }
 }
 
@@ -609,68 +670,79 @@ body {
 /* CTA section */
 .cta {
     padding: 80px 0;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.cta:before {
+.cta::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: url('../images/backgrounds/cta-bg.jpg') center/cover no-repeat;
+    opacity: 0.15;
     z-index: 0;
-}
-
-.cta:after {
-    display: none;
 }
 
 .cta .container {
     position: relative;
-    z-index: 2;
-}
-
-.cta .button.primary {
-    background: var(--accent);
-    border: none;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
-.cta .button.primary:before {
-    display: none;
-}
-
-.cta .button.primary:hover {
-    background: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .cta h2 {
-    font-size: 38px;
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta p {
-    font-size: 20px;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
 }
 
-.cta .button.large {
-    padding: 18px 36px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    border-radius: 10px;
+.cta .button {
+    background: white;
+    color: var(--primary);
+    border: 2px solid white;
+    font-size: 18px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta .button:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .cta {
+        padding: 60px 0;
+    }
+    
+    .cta h2 {
+        font-size: 28px;
+    }
+    
+    .cta p {
+        font-size: 16px;
+    }
+    
+    .cta .button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
 }
 
 /* Footer styles */
@@ -1016,16 +1088,16 @@ section {
 }
 
 section:nth-child(odd) {
-    background: var(--gray-100);
+    background: var(--white);
 }
 
 section:nth-child(even) {
-    background: white;
+    background: var(--light-bg);
 }
 
 /* Testimonials section */
 .testimonials {
-    background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+    background: linear-gradient(135deg, var(--light-bg), var(--gray-200));
     padding: 80px 0;
     position: relative;
     overflow: hidden;
@@ -1784,4 +1856,28 @@ textarea.form-control {
 .service-card:nth-child(5) .service-image::after,
 .service-card:nth-child(6) .service-image::after {
     content: none;
+}
+
+/* Стили для телефона в футере и контактах */
+.contact-method-content a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-method-content a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.footer-section a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--white);
+    text-decoration: underline;
 } 
