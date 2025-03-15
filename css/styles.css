@@ -1695,6 +1695,36 @@ textarea.form-control {
     background-image: url('../images/services/service6.jpg');
 }
 
+.service-card:nth-child(7) .service-image {
+    background-image: url('../images/services/service7.jpg');
+    background-position: center;
+}
+
+.service-card:nth-child(8) .service-image {
+    background-image: url('../images/services/service8.jpg');
+    background-position: center;
+}
+
+.service-card:nth-child(9) .service-image {
+    background-image: url('../images/services/service9.jpg');
+    background-position: center;
+}
+
+.service-card:nth-child(10) .service-image {
+    background-image: url('../images/services/service10.jpg');
+    background-position: center;
+}
+
+.service-card:nth-child(11) .service-image {
+    background-image: url('../images/services/service11.jpg');
+    background-position: center;
+}
+
+.service-card:nth-child(12) .service-image {
+    background-image: url('../images/services/service12.jpg');
+    background-position: center;
+}
+
 .service-card:nth-child(7) .service-image::after {
     background-color: rgba(0, 150, 136, 0.8);
 }
